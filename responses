@@ -1,0 +1,35 @@
+import openai
+
+# Set your OpenAI API key here
+api_key = "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"
+
+# Set the API key for the OpenAI client
+openai.api_key = api_key
+
+# Your long text goes here. This could be any substantial piece of text from which you want to extract information or ask questions about.
+long_text = """
+Long text for the data you have taken as input
+"""
+
+# List of questions you want to ask based on the questions from the pdf
+questions = [
+        info_form.
+]
+
+# Start constructing the messages for the API call
+messages = [{"role": "system", "content": "The following is a detailed context for the conversation: " + long_text}]
+
+# Add each question as a user message
+for question in questions:
+    messages.append({"role": "user", "content": question})
+
+# Make the API call
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=messages
+)
+
+# Print the answers to the questions
+for i, choice in enumerate(response.choices, start=1):
+    print(f"Q{i}: {questions[i-1]}")
+    print(f"A{i}: {choice.message}\n")
