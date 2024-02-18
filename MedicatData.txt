@@ -1,0 +1,5 @@
+What is the patient's full name?: Laith Gordon
+What is the patient's date of birth?: 9th December 2003
+What is the patient's blood type?: A+
+What are the patient's known allergies?: Nuts
+What is the patient's current medication regimen?: Steroids
