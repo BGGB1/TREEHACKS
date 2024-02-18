@@ -1,0 +1,23 @@
+from PyPDF2 import PdfReader
+
+# Define the path to the PDF file
+pdf_path = '/Users/benbonas/Desktop/uclahealth-new-patient-questionnaire.pdf'  # Make sure to update this to the path of your PDF
+
+# Initialize a PDF reader
+reader = PdfReader(pdf_path)
+
+# Initialize an empty list to store text from each page
+text_from_pdf = []
+
+# Loop through each page in the PDF
+for page in reader.pages:
+    # Extract text from the current page
+    page_text = page.extract_text()
+    # Append the extracted text to our list
+    text_from_pdf.append(page_text)
+
+# Combine the text from all pages into a single string
+combined_text = "\n".join(filter(None, text_from_pdf))  # This will also remove any None values
+
+# Print the extracted text
+print(combined_text)

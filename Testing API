@@ -1,0 +1,27 @@
+import os
+import openai
+import requests
+
+# Set your OpenAI API key here
+api_key = "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"
+
+# Initialize the OpenAI client with your API key
+openai.api_key = api_key
+
+
+
+completion = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
+    {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
+  ]
+)
+# Print the response to see the uploaded file details
+print(response)
+
+
+
+
+
+
