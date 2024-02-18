@@ -25,7 +25,7 @@ personal_health_data= read_text_from_file(medical_data_path)
 health_form = extract_health_form(health_form_pdf_path)
 
 # Set your OpenAI API key here
-api_key = "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"
+api_key = "insert-api-key-here"
 
 # Set the API key for the OpenAI client
 openai.api_key = api_key
