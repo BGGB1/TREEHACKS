@@ -1,3 +1,4 @@
+## This program will take somebody's medical data form MedicalData.txt and put it onto a medical form FilledOutForm.txt.
 import openai
 from PyPDF2 import PdfReader
 
@@ -47,7 +48,7 @@ API_output = response.choices[0].message.content
 print(API_output)
 
 input_file_path = 'openai-env/Code/filled_out.txt'  
-output_file_path = 'openai-env/Code/output_final.md'  
+output_file_path = 'openai-env/Code/FilledOutForm.md'  
 
 
 # Write API output to the input file path

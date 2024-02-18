@@ -1,5 +1,35 @@
-'What is your name?': ``sophia `malaekeh
-'What is your date of birth?': `may 30, 2004
-'What is the reason for your visit today?': `mental health issues
-'Are you currently taking any medications?': ozempic
-'Do you have any known allergies to medications or substances?': gluten
+'What is your name': Laith Gordon
+'What is your date of birth': 9th December 2003
+'What is your current address': Crothers Memorial Stanford
+'What is your primary care physician's name': Dr Ben
+'What medical conditions do you have': Celiacs, Arthuritis
+'What medications are you currently taking': Advil
+'Do you have any known allergies': Pollen
+'Have you had any surgeries in the past': Acl repair, heart stent, gastric bipass
+'What is your family medical history': Diabetes mothers side, high cholestoral fathers side
+'When was your last physical exam': A month ago
+'Do you smoke': No
+'Do you consume alcohol': Yes
+'Do you exercise regularly': Twice a week
+'What is your typical diet like': Healthy
+'Have you experienced any recent weight changes': No
+'Are you experiencing any specific symptoms currently': Yes, fever, cough, nausea, and eye dryness
+'Are you up to date on all recommended vaccines': Yes
+'What is your occupation': Student
+'Have you had any recent injuries': Broken arm
+'Are you planning on traveling internationally': No
+'Do you have a history of mental health disorders': No
+'Are you currently pregnant or trying to conceive': No
+'Have you had any recent infections': Flu
+'Do you wear glasses or contact lenses': No
+'Have you had any recent changes in your vision': No
+'Do you have a history of heart disease': No
+'Do you have a history of diabetes': Yes
+'Have you had any recent skin changes or abnormalities': No
+'Are you currently experiencing any pain': No
+'Do you have a history of high blood pressure': Yes
+'What do you prefer to be called': Laith
+'Do you take vitamins': Yes, vitamin C
+'Who lives with you at home?': Nobody
+'Have you ever had a blood transfusion': Yes
+'When did you recieve your vaccines?': Flu 2003, Tetanus 2005, Hepatits A 2004, Hepatitus B 2015, Varicella 2010

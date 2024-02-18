@@ -1,13 +1,14 @@
+## This program prompts the user to enter their medical data. It then prepares it in a format ready for their data to be used to fill out a form.
 import openai
 import re
 
 # Your OpenAI API key
-openai.api_key = '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'
+openai.api_key = 'insert-api-key-here'
 
 def initialPrompt(numQuestions):
     questioningOver = False
     # Start the conversation with a series of questions
-    prompt = "You will create a text file of medical records. Output an text array of " + numQuestions + " new questions written in the format ['question 1', 'question 2', 'question 3', ... , 'questions" + numQuestions + "], do not respond anything else other than these questions stored in square brackets and each separated by a comma. The first question should be what is your name."
+    prompt = "You will create a text file of medical records. Output an text array of " + numQuestions + " new questions written in the format ['question 1', 'question 2', 'question 3', ... , 'questions" + numQuestions + "], do not respond anything else other than these questions stored in square brackets and each separated by a comma, the questions themselves must not contain commas - the commas should only come in between questions. The first question should be what is your name."
     full_prompt = [ {"role": "system", "content": prompt} ]
     # Send the initial prompt to the API
     response = openai.ChatCompletion.create(
