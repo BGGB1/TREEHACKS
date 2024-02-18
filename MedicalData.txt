@@ -1,0 +1,5 @@
+'What is your name?': ``sophia `malaekeh
+'What is your date of birth?': `may 30, 2004
+'What is the reason for your visit today?': `mental health issues
+'Are you currently taking any medications?': ozempic
+'Do you have any known allergies to medications or substances?': gluten

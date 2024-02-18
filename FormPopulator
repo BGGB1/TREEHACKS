@@ -1,0 +1,71 @@
+import openai
+from PyPDF2 import PdfReader
+
+# Define the path to the text file and the PDF file
+medical_data_path = 'openai-env/Code/MedicalData.txt'  # Update this to the actual text file path
+health_form_pdf_path = '/Users/benbonas/Desktop/uclahealth-new-patient-questionnaire.pdf'  
+
+
+
+# Function to read text from a file
+def read_text_from_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
+
+
+# Function to extract text from a PDF
+def extract_health_form(pdf_path):
+    reader = PdfReader(pdf_path)
+    text = [page.extract_text() for page in reader.pages if page.extract_text() is not None]
+    return "\n".join(text)
+
+# Read text from the text file and the PDF
+personal_health_data= read_text_from_file(medical_data_path)
+health_form = extract_health_form(health_form_pdf_path)
+
+# Set your OpenAI API key here
+api_key = "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"
+
+# Set the API key for the OpenAI client
+openai.api_key = api_key
+
+# Construct the messages for the API call
+instructions = "You are an intelligent form filler. You will be given OCR content from a scanned in form, to which you will fill out the blank responses or anywhere that you think personal information should be inserted and return the completed form. In your output, do not output any of the empty lines (_). For multi-selections or things that you think are multi-selection, answer with all caps.For a question that has multiple answer segments fill out as many of the answer segments as possible with the given information. Attempt to fill out the entire form and don’t quit out after a page ends. Make sure the entire document has been parsed through. Do not have emojis in your response and please fill in the box yes or no in the form with an x to denote which option was picked if the answer is known. Do not add a completion message. Here is the user's specific personal information:"
+
+messages = [
+    {"role": "system", "content": instructions + personal_health_data},
+    {"role": "user", "content": health_form}
+]
+
+# Make API call
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=messages
+)
+
+API_output = response.choices[0].message.content
+print(API_output)
+
+input_file_path = 'openai-env/Code/filled_out.txt'  
+output_file_path = 'openai-env/Code/output_final.md'  
+
+
+# Write API output to the input file path
+with open(input_file_path, 'w', encoding='utf-8') as file:  
+    file.write(API_output)
+
+# Read the content from the newly written file
+with open(input_file_path, 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    # Assuming extra information starts after a marker line "END"
+    content_lines = []
+    for line in lines:
+        if line.strip() == "EXTRA INFORMATION:": 
+            break
+        content_lines.append(line)
+
+content = ''.join(content_lines)
+
+# Write the read content to the output Markdown file
+with open(output_file_path, 'w', encoding='utf-8') as file:  
+    file.write(content)
